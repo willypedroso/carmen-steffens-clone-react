@@ -4,6 +4,8 @@ import { HiOutlineUser, HiOutlineShoppingBag, HiSearch } from "react-icons/hi";
 import { useState } from 'react';
 
 function Header() {
+    
+    /* Declaration of conditional menu control variables */
     const [renderSapatos, setRenderSapatos] = useState(false);
     const [renderBolsas, setRenderBolsas] = useState(false);
     const [renderRoupas, setRenderRoupas] = useState(false);
@@ -14,12 +16,18 @@ function Header() {
     return (
         <div className='flex justify-center flex-wrap'>
             <div className='flex flex-col justify-center flex-wrap items-center h-[170px] w-[600px]'>
+                
+                {/* Carmen Steffens header logo */}
                 <div><img src={logo} alt="Carmen Steffens Logo" /></div>
+
+                {/* Menu */}
                 <div className='flex justify-around flex-wrap w-full text-[0.7rem] mt-3'>
                     <ul className='cursor-pointer'
                         onMouseOver={() => setRenderSapatos(true)}
                         onMouseOut={() => setRenderSapatos(false)}
                     >SAPATOS <RiArrowDropDownFill className='inline'/></ul>
+                    
+                    {/* Conditional submenu "Sapatos" */}
                     {renderSapatos ? (
                         <div className='flex flex-col flex-wrap absolute shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
                         onMouseOver={() => setRenderSapatos(true)}
@@ -42,11 +50,13 @@ function Header() {
                             <a href="#"><strong>LINHA NOVA</strong></a>
                         </div>
                     ) : false }
-                    
+
                     <ul className='cursor-pointer'
                         onMouseOver={() => setRenderBolsas(true)}
                         onMouseOut={() => setRenderBolsas(false)}
                     >BOLSAS <RiArrowDropDownFill className='inline'/></ul>
+                    
+                    {/* Conditional submenu "Bolsas" */}
                     {renderBolsas ? (
                         <div className='flex flex-col flex-wrap absolute shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
                         onMouseOver={() => setRenderBolsas(true)}
@@ -69,6 +79,8 @@ function Header() {
                         onMouseOver={() => setRenderRoupas(true)}
                         onMouseOut={() => setRenderRoupas(false)}
                     >ROUPAS <RiArrowDropDownFill className='inline'/></ul>
+                    
+                    {/* Conditional submenu "Roupas" */}
                     {renderRoupas ? (
                         <div className='flex flex-col flex-wrap absolute shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
                         onMouseOver={() => setRenderRoupas(true)}
@@ -93,6 +105,8 @@ function Header() {
                         onMouseOver={() => setRenderCsyoung(true)}
                         onMouseOut={() => setRenderCsyoung(false)}
                     >CS YOUNG <RiArrowDropDownFill className='inline'/></ul>
+
+                    {/* Conditional submenu "CS Young" */}
                     {renderCsyoung ? (
                         <div className='flex justify-between flex-wrap absolute shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
                         onMouseOver={() => setRenderCsyoung(true)}
@@ -108,6 +122,8 @@ function Header() {
                         onMouseOver={() => setRenderAcessorios(true)}
                         onMouseOut={() => setRenderAcessorios(false)}
                     >ACESSÓRIOS <RiArrowDropDownFill className='inline'/></ul>
+
+                    {/* Conditional submenu "Acessórios" */}
                     {renderAcessorios ? (
                         <div className='flex flex-col justify-between flex-wrap absolute shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
                         onMouseOver={() => setRenderAcessorios(true)}
@@ -132,6 +148,8 @@ function Header() {
                         onMouseOver={() => setRenderOutlet(true)}
                         onMouseOut={() => setRenderOutlet(false)}
                     >OUTLET <RiArrowDropDownFill className='inline'/></ul>
+
+                    {/* Conditional submenu "Outlet" */}
                     {renderOutlet ? (
                         <div className='flex flex-col justify-between flex-wrap absolute shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
                         onMouseOver={() => setRenderOutlet(true)}
@@ -148,9 +166,12 @@ function Header() {
                     ) : false }
                 </div>
             </div>
+
+            {/* Profile, Cart and Search field */}
             <div className='flex flex-col justify-around p-6'>
                 <div className='flex justify-between w-[190px] text-[0.88rem]'>
-                    <a href="#">Meu Perfil <HiOutlineUser className='inline pb-[2px]'/></a><a href="#">Sacola <HiOutlineShoppingBag className='inline pb-[2px]'/></a>
+                    <a href="#">Meu Perfil <HiOutlineUser className='inline pb-[2px]'/></a>
+                    <a href="#">Sacola <HiOutlineShoppingBag className='inline pb-[2px]'/></a>
                 </div>
                 <span className='border-2 border-gray-300 rounded-md'><input className='w-[180px] rounded-md p-1 text-[0.8rem]' type="text" placeholder='Faça sua busca aqui' /><HiSearch className='inline'/></span>
             </div>
