@@ -1,14 +1,32 @@
 import logo from '../../images/carmen-steffens-logo.jpg';
 import { RiArrowDropDownFill } from "react-icons/ri";
 import { HiOutlineUser, HiOutlineShoppingBag, HiSearch } from "react-icons/hi";
+import { useState } from 'react';
 
 function Header() {
+    const [renderSapatos, setRenderSapatos] = useState(false);
     return (
-        <div className='flex justify-center'>
-            <div className='flex flex-col justify-center items-center h-[170px] w-[600px]'>
+        <div className='flex justify-center flex-wrap'>
+            <div className='flex flex-col justify-center flex-wrap items-center h-[170px] w-[600px]'>
                 <div><img src={logo} alt="Carmen Steffens Logo" /></div>
-                <div className='flex justify-around w-full text-[0.7rem] mt-4'>
-                    <ul className='cursor-pointer'>SAPATOS <RiArrowDropDownFill className='inline'/></ul>
+                <div className='flex justify-around flex-wrap w-full text-[0.7rem] mt-3'>
+                    <ul className='cursor-pointer'
+                        onMouseOver={() => setRenderSapatos(true)}
+                        onMouseOut={() => setRenderSapatos(false)}
+                    >SAPATOS <RiArrowDropDownFill className='inline'/></ul>
+                    {renderSapatos ? (
+                        <div className='flex flex-col flex-wrap absolute top-[125px] h-[140px] w-[800px] p-[20px]'
+                        onMouseOver={() => setRenderSapatos(true)}
+                        onMouseOut={() => setRenderSapatos(false)}>
+                            <a href="#"><strong>VER TODOS</strong></a>
+                            <a href="#"><strong>FLATS</strong></a>
+                            <a href="#"><strong>PLATAFORMAS</strong></a>
+                            <a href="#"><strong>TAMANCOS</strong></a>
+                            <a href="#"><strong>ANABELAS</strong></a>
+                            <a href="#"><strong>MOCASSINS</strong></a>
+                            <a href="#"><strong>SANDÁLIAS</strong></a>
+                        </div>
+                    ) : false }
                     <ul className='cursor-pointer'>BOLSAS <RiArrowDropDownFill className='inline'/></ul>
                     <ul className='cursor-pointer'>ROUPAS <RiArrowDropDownFill className='inline'/></ul>
                     <ul className='cursor-pointer'>CS YOUNG <RiArrowDropDownFill className='inline'/></ul>
