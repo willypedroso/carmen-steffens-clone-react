@@ -1,9 +1,9 @@
 import logo from '../../images/carmen-steffens-logo.jpg';
 import { RiArrowDropDownFill } from "react-icons/ri";
-import { HiOutlineUser, HiOutlineShoppingBag, HiSearch } from "react-icons/hi";
+import { HiMenu, HiOutlineUser, HiOutlineShoppingBag, HiSearch } from "react-icons/hi";
 import { useState } from 'react';
 
-function Header() {
+function Header(props) {
     
     /* Declaration of conditional menu control variables */
     const [renderSapatos, setRenderSapatos] = useState(false);
@@ -15,6 +15,25 @@ function Header() {
 
     return (
         <div>
+            {props.mobile ?
+            (
+                /* Rendering for phones and smaller screens */
+                <div className='flex flex-wrap align-middle justify-between h-14'>
+                    
+                    {/* Menu bar */}
+                    <HiMenu className='m-2 text-[1.2rem] cursor-pointer'/>
+                    
+                    {/* Carmen Steffens header logo */}
+                    <img className='h-4 m-3 ml-6' src={logo} alt="Carmen Steffens Logo" />
+
+                    {/* Search and Cart */}
+                    <div className='flex w-14 text-[1.2rem] m-1'>
+                        <HiSearch className='m-1 cursor-pointer'/><HiOutlineShoppingBag className='m-1 cursor-pointer'/>
+                    </div>
+                </div>
+            ):
+            (
+                /* Rendering for computers and bigger screens */
             <div className='flex justify-center flex-wrap'>
                 <div className='flex flex-col justify-center flex-wrap items-center h-[170px] w-[600px]'>
             
@@ -30,7 +49,7 @@ function Header() {
             
                         {/* Conditional submenu "Sapatos" */}
                         {renderSapatos ? (
-                            <div className='flex flex-col flex-wrap absolute shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
+                            <div className='flex flex-col flex-wrap absolute bg-white shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
                             onMouseOver={() => setRenderSapatos(true)}
                             onMouseOut={() => setRenderSapatos(false)}>
                                 <a href="#"><strong>VER TODOS</strong></a>
@@ -58,7 +77,7 @@ function Header() {
             
                         {/* Conditional submenu "Bolsas" */}
                         {renderBolsas ? (
-                            <div className='flex flex-col flex-wrap absolute shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
+                            <div className='flex flex-col flex-wrap absolute bg-white shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
                             onMouseOver={() => setRenderBolsas(true)}
                             onMouseOut={() => setRenderBolsas(false)}>
                                 <a href="#"><strong>VER TODOS</strong></a>
@@ -81,7 +100,7 @@ function Header() {
             
                         {/* Conditional submenu "Roupas" */}
                         {renderRoupas ? (
-                            <div className='flex flex-col flex-wrap absolute shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
+                            <div className='flex flex-col flex-wrap absolute bg-white shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
                             onMouseOver={() => setRenderRoupas(true)}
                             onMouseOut={() => setRenderRoupas(false)}>
                                 <a href="#"><strong>VER TODOS</strong></a>
@@ -106,7 +125,7 @@ function Header() {
                         
                         {/* Conditional submenu "CS Young" */}
                         {renderCsyoung ? (
-                            <div className='flex justify-between flex-wrap absolute shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
+                            <div className='flex justify-between flex-wrap absolute bg-white shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
                             onMouseOver={() => setRenderCsyoung(true)}
                             onMouseOut={() => setRenderCsyoung(false)}>
                                 <a href="#"><strong>CS YOUNG ROUPAS</strong></a>
@@ -122,7 +141,7 @@ function Header() {
                         
                         {/* Conditional submenu "Acessórios" */}
                         {renderAcessorios ? (
-                            <div className='flex flex-col justify-between flex-wrap absolute shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
+                            <div className='flex flex-col justify-between flex-wrap absolute bg-white shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
                             onMouseOver={() => setRenderAcessorios(true)}
                             onMouseOut={() => setRenderAcessorios(false)}>
                                 <a href="#"><strong>VER TODOS</strong></a>
@@ -147,7 +166,7 @@ function Header() {
                         
                         {/* Conditional submenu "Outlet" */}
                         {renderOutlet ? (
-                            <div className='flex flex-col justify-between flex-wrap absolute shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
+                            <div className='flex flex-col justify-between flex-wrap absolute bg-white shadow-lg top-[125px] h-[140px] w-[800px] p-[20px]'
                             onMouseOver={() => setRenderOutlet(true)}
                             onMouseOut={() => setRenderOutlet(false)}>
                                 <a href="#"><strong>SAPATOS</strong></a>
@@ -172,9 +191,12 @@ function Header() {
                     <span className='border-2 border-gray-300 rounded-md'><input className='w-[180px] rounded-md p-1 text-[0.8rem]' type="text" placeholder='Faça sua busca aqui' /><HiSearch className='inline'/></span>
                 </div>
             </div>
-            {!renderSapatos && !renderBolsas && !renderRoupas && !renderCsyoung && !renderAcessorios && !renderOutlet ? (<div className='bg-black text-white text-center mt-[-15px]'>
+            )}
+            
+            {/* Changeable color banner */}
+            <div className='bg-black text-white text-center mt-[-15px]'>
                 <p className='p-3 text-[0.8rem]'>FRETE GRÁTIS - Retire seu pedido em uma de nossas lojas por todo Brasil.</p>
-            </div>): false}
+            </div>
         </div>
     );
 }
