@@ -7,7 +7,7 @@ import { TfiPinterest } from "react-icons/tfi";
 function Footer() {
     return (
         <div>
-            <div className="flex flex-wrap justify-center border-t-2 pt-5">
+            <div className="flex flex-wrap justify-center border-t-2 pt-5 min-w-[330px]">
             
                 {/* Follow links */}
                 <div className="flex flex-col w-[240px] m-4">
@@ -46,7 +46,7 @@ function Footer() {
                     <a href='#' className='text-[0.8rem] m-1'>Meus Pedidos</a>
                 </div>
             </div>
-            <div className='flex justify-between items-center bg-gray-300 mb-2 mt-3 min-h-[50px]'>
+            <div className='flex justify-center flex-wrap items-center bg-gray-300 mb-2 mt-3 min-h-[50px]'>
                 <div className='flex justify-center'>
                     <a href='#' className='text-[0.8rem] m-5 p-2 mt-0 mb-0'>Termos de Uso</a>
                     <a href='#' className='text-[0.8rem] m-5 p-2 mt-0 mb-0'>Política de Privacidade</a>
