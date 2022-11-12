@@ -84,19 +84,19 @@ function Main(props) {
                     {/* Buy button */}
                     <div className='flex justify-center bg-[#a9cf80] text-white
                         p-3 text-[0.78rem] font-bold mt-3 cursor-pointer'>
-                            <h1>COMPRAR</h1>
+                            <button>COMPRAR</button>
                     </div>
                     
                     {/* Add to cart button */}
                     <div className='flex justify-center bg-white text-[#a9cf80] border-[3px] border-[#a9cf80]
                         p-3 text-[0.78rem] font-bold mt-2 cursor-pointer'>
-                            <h1>ADICIONAR AO CARRINHO</h1>
+                            <button>ADICIONAR AO CARRINHO</button>
                     </div>
                     
                     {/* Ask for present button */}
                     <div className='flex justify-center bg-[#eac26a] text-black
                         p-2 text-[0.78rem] font-bold mt-2 cursor-pointer'>
-                            <HiGift className='inline text-[1.3rem] mr-3'/><h1>PEDIR DE PRESENTE</h1>
+                            <HiGift className='inline text-[1.3rem] mr-3'/><button>PEDIR DE PRESENTE</button>
                     </div>
 
                     {/* Product description */}
