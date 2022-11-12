@@ -81,7 +81,8 @@ function Header(props) {
                     </div>
                     ) : false}
 
-                    <div className='flex flex-wrap align-middle justify-between h-14 min-w-[330px]'>
+                    {/* Mobile header */}
+                    <div className='flex flex-wrap justify-between h-[70px] min-w-[330px]'>
                     
                         {/* Menu bar */}
                         <HiMenu className='m-2 text-[1.2rem] cursor-pointer' onClick={() => {document.documentElement.style.overflow = 'hidden'; setSideBar(true)}}/>
