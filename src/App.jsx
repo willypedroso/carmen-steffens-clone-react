@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "./components/layout/Header";
 import Main from "./components/layout/Main";
+import Suggestions from "./components/layout/Suggestions";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
     <div className="flex flex-col">
       <Header mobile={isMobile}/>
       <Main mobile={isMobile}/>
+      <Suggestions/>
     </div>
   );
 }
