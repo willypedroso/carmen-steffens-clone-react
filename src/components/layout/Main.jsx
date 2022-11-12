@@ -20,8 +20,8 @@ function Main(props) {
                     <TfiAngleLeft className='inline text-[3rem] cursor-pointer' onClick={() => {
                         mainPicture == productPic1 ? setMainPicture(productPic2) : setMainPicture(productPic1)
                     }}/>
-                    <div className='flex'>
-                        <a href={mainPicture}><img src={mainPicture} alt="Product Picture"/></a>
+                    <div className='flex truncate'>
+                        <a href={mainPicture}><img className='hover:scale-[2]' src={mainPicture} alt="Product Picture"/></a>
                     </div>
                     <TfiAngleRight className='inline text-[3rem] cursor-pointer' onClick={() => {
                         mainPicture == productPic1 ? setMainPicture(productPic2) : setMainPicture(productPic1)
@@ -128,8 +128,8 @@ function Main(props) {
                     </div>
                     
                     {/* Main picture of the product */}
-                    <div className='w-[540px] mt-10'>
-                        <a href={mainPicture}><img src={mainPicture} alt="Main picture of product" /></a>
+                    <div className='w-[540px] mt-10 truncate'>
+                        <a href={mainPicture}><img className='hover:scale-[2]' src={mainPicture} alt="Main picture of product" /></a>
                     </div>
                 </div>
 
