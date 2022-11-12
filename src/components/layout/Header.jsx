@@ -85,12 +85,12 @@ function Header(props) {
                     <div className='flex flex-wrap justify-between h-[70px] min-w-[330px]'>
                     
                         {/* Menu bar */}
-                        <HiMenu className='m-2 text-[1.2rem] cursor-pointer' onClick={() => {document.documentElement.style.overflow = 'hidden'; setSideBar(true)}}/>
+                        <HiMenu className='m-2 text-[1.4rem] cursor-pointer' onClick={() => {document.documentElement.style.overflow = 'hidden'; setSideBar(true)}}/>
                     
                         {/* Carmen Steffens header logo */}
-                        <img className='h-4 m-3 ml-6 cursor-pointer' src={logo} alt="Carmen Steffens Logo" />
+                        <img className='h-6 m-3 ml-6 cursor-pointer' src={logo} alt="Carmen Steffens Logo" />
                         {/* Search and Cart */}
-                        <div className='flex w-14 text-[1.2rem] m-1'>
+                        <div className='flex w-14 text-[1.4rem] m-1'>
                             <HiSearch className='m-1 cursor-pointer' onClick={() => setSearchField(true)}/><HiOutlineShoppingBag className='m-1 cursor-pointer'/>
                         </div>
                     </div>
