@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import productPic1 from '../../images/product-pic.jpeg';
 import productPic2 from '../../images/product-pic2.jpeg';
+
 import { HiGift } from "react-icons/hi";
+import { TfiAngleLeft, TfiAngleRight } from "react-icons/tfi";
 
 function Main(props) {
     const [mainPicture, setMainPicture] = useState(productPic1);
@@ -10,7 +12,21 @@ function Main(props) {
         <div>
             {props.mobile ?
             (
-            <h1>Mobile</h1>
+            /* Rendering for mobiles and smaller screens */
+            <div className='flex flex-col'>
+                <div className='flex items-center m-3'>
+                    <TfiAngleLeft className='inline text-[3rem] cursor-pointer' onClick={() => {
+                        mainPicture == productPic1 ? setMainPicture(productPic2) : setMainPicture(productPic1)
+                    }}/>
+                    <div className='flex'>
+                        <a href={mainPicture}><img src={mainPicture} alt="Product Picture"/></a>
+                    </div>
+                    <TfiAngleRight className='inline text-[3rem] cursor-pointer' onClick={() => {
+                        mainPicture == productPic1 ? setMainPicture(productPic2) : setMainPicture(productPic1)
+                    }}/>
+                </div>
+            </div>
+            
             ) :
             
             /* Rendering for computers and bigger screens */
