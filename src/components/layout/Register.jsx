@@ -11,9 +11,9 @@ function Register() {
             {/* Name and email field */}
             <div className="flex flex-col m-5 w-[330px] mt-0 mb-[-10px]">
                 <input className="border-b-[1px] border-black
-                    text-[0.8rem] p-2 placeholder:text-black" type="text" placeholder="Seu nome" />
+                    text-[0.8rem] p-2 placeholder:text-black" type="name" placeholder="Seu nome" />
                 <input className="border-b-[1px] border-black
-                    text-[0.8rem] p-2 placeholder:text-black" type="text" placeholder="Seu e-mail" />
+                    text-[0.8rem] p-2 placeholder:text-black" type="email" placeholder="Seu e-mail" />
             </div>
             
             {/* Accept newsletter and register button */}
