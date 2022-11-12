@@ -46,13 +46,13 @@ function Footer() {
                     <a href='#' className='text-[0.8rem] m-1'>Meus Pedidos</a>
                 </div>
             </div>
-            <div className='flex justify-between items-center bg-gray-300 mb-2 mt-3 h-[50px]'>
-                <div>
-                    <a href='#' className='text-[0.8rem] m-5 p-2'>Termos de Uso</a>
-                    <a href='#' className='text-[0.8rem] m-5 p-2'>Política de Privacidade</a>
+            <div className='flex justify-between items-center bg-gray-300 mb-2 mt-3 min-h-[50px]'>
+                <div className='flex justify-center'>
+                    <a href='#' className='text-[0.8rem] m-5 p-2 mt-0 mb-0'>Termos de Uso</a>
+                    <a href='#' className='text-[0.8rem] m-5 p-2 mt-0 mb-0'>Política de Privacidade</a>
                 </div>
-                <div>
-                <a href='#' className='text-[0.8rem] m-6'>Carmen Steffens Internacional 🇺🇸</a>
+                <div className='flex justify-center'>
+                <a href='#' className='text-[0.8rem] m-6 mt-0 mb-0'>Carmen Steffens Internacional 🇺🇸</a>
                 </div>
             </div>
             <p className='text-center text-[0.8rem] text-gray-600 mb-3'>Clone page developed by <a className='font-bold hover:underline' href="https://github.com/willypedroso" target="_blank" rel="noreferrer noopener">Will Pedroso</a>. All rights reserved to Carmen Steffens. &copy;2022</p>
