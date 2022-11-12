@@ -133,7 +133,7 @@ function Header(props) {
                     <div className='flex flex-col justify-center flex-wrap items-center h-[170px] w-[600px]'>
                 
                         {/* Carmen Steffens header logo */}
-                        <div><img src={logo} alt="Carmen Steffens Logo" /></div>
+                        <div><img className='cursor-pointer' src={logo} alt="Carmen Steffens Logo" /></div>
                 
                         {/* Menu */}
                         <div className='flex justify-around flex-wrap w-full text-[0.7rem] mt-3'>
