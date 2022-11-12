@@ -22,21 +22,21 @@ function Header(props) {
             (
                 /* Rendering for phones and smaller screens */
                 <div>
-                    <div className='flex flex-wrap align-middle justify-between h-14'>
+                    <div className='flex flex-wrap align-middle justify-between h-14 min-w-[330px]'>
                     
                         {/* Menu bar */}
                         <HiMenu className='m-2 text-[1.2rem] cursor-pointer'/>
                     
                         {/* Carmen Steffens header logo */}
-                        <img className='h-4 m-3 ml-6' src={logo} alt="Carmen Steffens Logo" />
+                        <img className='h-4 m-3 ml-6 cursor-pointer' src={logo} alt="Carmen Steffens Logo" />
                         {/* Search and Cart */}
                         <div className='flex w-14 text-[1.2rem] m-1'>
                             <HiSearch className='m-1 cursor-pointer'/><HiOutlineShoppingBag className='m-1 cursor-pointer'/>
                         </div>
                     </div>
                     
-                    {/* Changeable color banner */}
-                    <div className='bg-black text-white text-center mt-[-15px]'>
+                    {/* Banner */}
+                    <div className='bg-black text-white text-center mt-[-15px] min-w-[330px]'>
                         <p className='p-3 text-[0.8rem]'>FRETE GRÁTIS - Retire seu pedido em uma de nossas lojas por todo Brasil.</p>
                     </div>
                 </div>

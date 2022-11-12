@@ -4,7 +4,7 @@ import suggestion3 from '../../images/suggestion3.jpeg';
 
 function Suggestions() {
     return (
-            <div className='flex flex-col justify-center align-middle'>
+            <div className='flex flex-col justify-center align-middle min-w-[330px]'>
                 <h1 className='self-center m-6 font-bold text-[1.5rem] text-center'>VOCÊ TAMBÉM PODE GOSTAR</h1>
                 <div className="flex flex-wrap justify-center">
                     
