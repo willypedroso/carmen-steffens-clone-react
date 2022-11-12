@@ -38,7 +38,7 @@ function Footer() {
                     <a href='#' className='text-[0.8rem] m-1'>Blog CS</a>
                 </div>
                 {/* Costumer services */}
-                <div className="flex flex-col w-[190px] m-4">
+                <div className="flex flex-col w-[240px] m-4">
                 <h1 className='m-2 font-bold text-[0.8rem]'>SERVIÇOS AO CONSUMIDOR</h1>
                     <a href='#' className='text-[0.8rem] m-1'>Seja um franqueado</a>
                     <a href='#' className='text-[0.8rem] m-1'>Multimarcas</a>
