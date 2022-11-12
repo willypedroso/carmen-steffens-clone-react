@@ -16,16 +16,32 @@ function Header(props) {
     const [renderAcessorios, setRenderAcessorios] = useState(false);
     const [renderOutlet, setRenderOutlet] = useState(false);
 
+    const [sideBar, setSideBar] = useState(false);
+
     return (
         <div>
             {props.mobile ?
             (
                 /* Rendering for phones and smaller screens */
                 <div>
+                    
+                    {sideBar ?
+                    (
+                    <div>
+                        <div className='fixed bg-black h-[100vh]
+                            w-[80vh] opacity-40' onClick={() => {document.documentElement.style.overflow = 'visible'; setSideBar(false)}}></div>
+                        <div className='fixed flex flex-col top-0 left-0 h-screen w-[80%] bg-white'>
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                    ) : false}
+
                     <div className='flex flex-wrap align-middle justify-between h-14 min-w-[330px]'>
                     
                         {/* Menu bar */}
-                        <HiMenu className='m-2 text-[1.2rem] cursor-pointer'/>
+                        <HiMenu className='m-2 text-[1.2rem] cursor-pointer' onClick={() => {document.documentElement.style.overflow = 'hidden'; setSideBar(true)}}/>
                     
                         {/* Carmen Steffens header logo */}
                         <img className='h-4 m-3 ml-6 cursor-pointer' src={logo} alt="Carmen Steffens Logo" />
