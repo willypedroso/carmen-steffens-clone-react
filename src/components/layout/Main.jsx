@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import productPic1 from '../../images/product-pic.jpeg';
 import productPic2 from '../../images/product-pic2.jpeg';
+import guiaMedidas from '../../images/tabela-de-medidas.jpg';
 
 import { HiGift } from "react-icons/hi";
 import { TfiAngleLeft, TfiAngleRight } from "react-icons/tfi";
@@ -75,7 +76,7 @@ function Main(props) {
                     <p className='bg-orange-600 text-white text-[0.4rem]
                         rounded-sm p-[2px] w-[120px] mt-1 text-center'>ESCOLHA UM TAMANHO</p>
                     
-                    <p className='mt-2 text-[0.8rem] cursor-pointer'><u>Veja nosso <strong>guia de medidas</strong></u></p>
+                    <a href={guiaMedidas} className='mt-2 text-[0.8rem] cursor-pointer'><u>Veja nosso <strong>guia de medidas</strong></u></a>
 
                     {/* Buttons */}
                     {/* Buy button */}
@@ -180,7 +181,7 @@ function Main(props) {
                     <p className='bg-orange-600 text-white text-[0.4rem]
                         rounded-sm p-[2px] w-[120px] mt-1 text-center'>ESCOLHA UM TAMANHO</p>
                     
-                    <p className='mt-2 text-[0.8rem] cursor-pointer'><u>Veja nosso <strong>guia de medidas</strong></u></p>
+                    <a href={guiaMedidas} className='mt-2 text-[0.8rem] cursor-pointer'><u>Veja nosso <strong>guia de medidas</strong></u></a>
 
                     {/* Buttons */}
                     {/* Buy button */}

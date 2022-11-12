@@ -19,6 +19,7 @@ function Header(props) {
     const [renderOutlet, setRenderOutlet] = useState(false);
 
     const [sideBar, setSideBar] = useState(false);
+    const [searchField, setSearchField] = useState(false);
 
     return (
         <div>
@@ -26,12 +27,16 @@ function Header(props) {
             (
                 /* Rendering for phones and smaller screens */
                 <div>
-                    
-                    {sideBar ?
+                    {/* Mobile side bar and Search Field */}
+                    {sideBar || searchField ?
                     (
                     <div>
                         <div className='fixed bg-black h-screen
-                            w-screen opacity-40' onClick={() => {document.documentElement.style.overflow = 'visible'; setSideBar(false)}}></div>
+                            w-screen opacity-40' onClick={() => {document.documentElement.style.overflow = 'visible'; setSideBar(false); setSearchField(false)}}></div>
+                        
+                        {/* Mobile side bar */}    
+                        {sideBar ? 
+                        (
                         <div className='fixed flex flex-col top-0 left-0
                             h-screen w-[80%] min-w-[200px] font-serif bg-white'>
                             <div className='flex justify-between'>
@@ -63,6 +68,16 @@ function Header(props) {
                                 <a href="#" className='p-2 pl-4 border-b-[1px] border-gray-300'>SERVIÇO AO CONSUMIDOR</a>
                             </div>
                         </div>
+                        ):false}
+
+                        {/* Mobile search field */}
+                        {searchField ?
+                        (
+                        <div className='absolute flex justify-start top-0 h-[60px] w-full bg-white'>
+                            <input className='border-b-[1px] border-gray-400 p-0 m-3 text-[.77rem] w-full focus:outline-none placeholder:font-bold' type="text" placeholder="Faça sua busca aqui" />
+                            <HiSearch className='inline self-center mr-3 text-[1.3rem] cursor-pointer' onClick={() => setSearchField(false)}/>
+                        </div>
+                        ):false}
                     </div>
                     ) : false}
 
@@ -75,7 +90,7 @@ function Header(props) {
                         <img className='h-4 m-3 ml-6 cursor-pointer' src={logo} alt="Carmen Steffens Logo" />
                         {/* Search and Cart */}
                         <div className='flex w-14 text-[1.2rem] m-1'>
-                            <HiSearch className='m-1 cursor-pointer'/><HiOutlineShoppingBag className='m-1 cursor-pointer'/>
+                            <HiSearch className='m-1 cursor-pointer' onClick={() => setSearchField(true)}/><HiOutlineShoppingBag className='m-1 cursor-pointer'/>
                         </div>
                     </div>
                     
@@ -268,7 +283,7 @@ function Header(props) {
                             <a href="#">Meu Perfil <HiOutlineUser className='inline pb-[2px]'/></a>
                             <a href="#">Sacola <HiOutlineShoppingBag className='inline pb-[2px]'/></a>
                         </div>
-                        <span className='border-2 border-gray-300 rounded-md'><input className='w-[180px] rounded-md p-1 text-[0.8rem]' type="text" placeholder='Faça sua busca aqui' /><HiSearch className='inline'/></span>
+                        <div className='flex items-center border-2 border-gray-300'><input className='p-1 pr-0 mr-0 text-[0.7rem] w-[150px] focus:outline-none' type="text" placeholder='Faça sua busca aqui' /><HiSearch className='inline ml-0 p-0 mr-3'/></div>
                     </div>
                 </div>
                 {/* Changeable color banner */}
