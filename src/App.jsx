@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
 import Main from "./components/layout/Main";
 import Register from "./components/layout/Register";
@@ -21,6 +22,7 @@ function App() {
       <Main mobile={isMobile}/>
       <Suggestions/>
       <Register/>
+      <Footer/>
     </div>
   );
 }
