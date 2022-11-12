@@ -2,6 +2,8 @@ import logo from '../../images/carmen-steffens-logo.jpg';
 import whiteLogoCs from '../../images/icon-brand-white-cs.png';
 import whiteLogoCsc from '../../images/icon-brand-white-csc.png';
 import whiteLogoCsy from '../../images/icon-brand-white-csy.png';
+import logoCinza from '../../images/logo-cinza.svg';
+
 import { RiArrowDropDownFill } from "react-icons/ri";
 import { HiMenu, HiOutlineUser, HiOutlineShoppingBag, HiSearch } from "react-icons/hi";
 import { useState } from 'react';
@@ -28,11 +30,37 @@ function Header(props) {
                     {sideBar ?
                     (
                     <div>
-                        <div className='fixed bg-black h-[100vh]
-                            w-[80vh] opacity-40' onClick={() => {document.documentElement.style.overflow = 'visible'; setSideBar(false)}}></div>
-                        <div className='fixed flex flex-col top-0 left-0 h-screen w-[80%] bg-white'>
-                            <div>
-
+                        <div className='fixed bg-black h-screen
+                            w-screen opacity-40' onClick={() => {document.documentElement.style.overflow = 'visible'; setSideBar(false)}}></div>
+                        <div className='fixed flex flex-col top-0 left-0
+                            h-screen w-[80%] min-w-[200px] font-serif bg-white'>
+                            <div className='flex justify-between'>
+                                <div className='m-3'>
+                                    <h1 className='text-[1.2rem]'>Olá, Visitante</h1>
+                                    <p className='text-[.7rem] cursor-pointer hover:underline'>Faça seu login</p>
+                                </div>
+                                <p className='text-[.6rem] m-3 cursor-pointer hover:underline' onClick={() => {document.documentElement.style.overflow = 'visible'; setSideBar(false)}}>Fechar</p>
+                            </div>
+                            <div className='flex pr-16 mr-4 m-1'><img src={logoCinza} alt="Logo CS cinza" /></div>
+                            <div className='flex flex-col text-[.7rem] mt-1 bg-gray-100'>
+                                <a href="#" className='p-2 pl-4 bg-gray-100 border-b-[1px] border-gray-300'>SAPATOS</a>
+                                <a href="#" className='p-2 pl-4 bg-gray-100 border-b-[1px] border-gray-300'>ROUPAS</a>
+                                <a href="#" className='p-2 pl-4 bg-gray-100 border-b-[1px] border-gray-300'>BOLSAS</a>
+                                <a href="#" className='p-2 pl-4 bg-gray-100 border-b-[1px] border-gray-300'>CS YOUNG</a>
+                                <a href="#" className='p-2 pl-4 bg-gray-100 border-b-[1px] border-gray-300'>ACESSÓRIOS</a>
+                                <a href="#" className='p-2 pl-4 bg-gray-100'>OUTLET</a>
+                                
+                                <div className='text-gray-300 text-[1.2rem] m-3 flex flex-col'>
+                                    <a href="#" className='hover:underline m-0'>Raphael Steffens</a>
+                                    <a href="#" className='hover:underline m-0'>CS Club</a>
+                                    <a href="#" className='hover:underline m-0'>CS Young</a>
+                                </div>
+                            </div>
+                            <div className='text-[.7rem] flex flex-col mt-2'>
+                                <a href="#" className='p-2 pl-4 border-b-[1px] border-gray-300'>SEJA UM(A) CONSULTOR(A)</a>
+                                <a href="#" className='p-2 pl-4 border-b-[1px] border-gray-300'>O MUNDO CS</a>
+                                <a href="#" className='p-2 pl-4 border-b-[1px] border-gray-300'>ATENDIMENTO</a>
+                                <a href="#" className='p-2 pl-4 border-b-[1px] border-gray-300'>SERVIÇO AO CONSUMIDOR</a>
                             </div>
                         </div>
                     </div>
