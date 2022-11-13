@@ -6,6 +6,8 @@ In this responsive SPA I make use of the following technologies and libraries:
 
 - React
 - Node.js
+- PostCSS
 - Tailwind CSS
 - React Icons
 - Testing Library
+- Jest
