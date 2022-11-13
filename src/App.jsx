@@ -22,7 +22,7 @@ function App() {
       <Main mobile={isMobile}/>
       <Suggestions/>
       <Register/>
-      <Footer/>
+      <Footer mobile={isMobile}/>
     </div>
   );
 }

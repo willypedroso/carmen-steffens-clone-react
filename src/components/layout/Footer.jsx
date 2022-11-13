@@ -4,9 +4,10 @@ import { FaFacebookF } from "react-icons/fa";
 import { TfiPinterest } from "react-icons/tfi";
 
 import { optionsServicos, optionsSobre, optionsSuporte } from '../../data/options';
+import PreviousMap from 'postcss/lib/previous-map';
 
 
-function Footer() {
+function Footer(props) {
     return (
         <div>
             <div className="flex flex-wrap justify-center border-t-2 pt-5 min-w-[330px]">
@@ -50,7 +51,7 @@ function Footer() {
             </div>
 
             {/* Additional documentations */}
-            <div className='flex justify-center flex-wrap items-center bg-gray-300 mb-2 mt-3 min-h-[50px]'>
+            <div className={props.mobile ? 'flex justify-center flex-wrap items-center bg-gray-300 mb-2 mt-3 min-h-[50px]' : 'flex justify-between flex-wrap items-center bg-gray-300 mb-2 mt-3 min-h-[50px]'}>
                 <div className='flex justify-center'>
                     <a href='#' className='text-[0.8rem] m-5 p-2 mt-0 mb-0'>Termos de Uso</a>
                     <a href='#' className='text-[0.8rem] m-5 p-2 mt-0 mb-0'>Política de Privacidade</a>
