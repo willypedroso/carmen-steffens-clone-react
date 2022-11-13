@@ -12,7 +12,7 @@ import { useState } from 'react';
 
 function Header(props) {
     
-    /* Declaration of conditional menu control variables */
+    /* Declaration of submenu conditional rendering variables */
     const [renderSapatos, setRenderSapatos] = useState(false);
     const [renderBolsas, setRenderBolsas] = useState(false);
     const [renderRoupas, setRenderRoupas] = useState(false);
@@ -20,7 +20,8 @@ function Header(props) {
     const [renderAcessorios, setRenderAcessorios] = useState(false);
     const [renderOutlet, setRenderOutlet] = useState(false);
 
-    const [sideBar, setSideBar] = useState(false);
+    /* Declaration of mobile sidebar conditional rendering variables */
+    const [sidebar, setSidebar] = useState(false);
     const [searchField, setSearchField] = useState(false);
 
     return (
@@ -30,14 +31,14 @@ function Header(props) {
                 /* Rendering for phones and smaller screens */
                 <div>
                     {/* Mobile side bar and Search Field */}
-                    {sideBar || searchField ?
+                    {sidebar || searchField ?
                     (
                     <div>
                         <div className='fixed bg-black h-screen
-                            w-screen opacity-40' onClick={() => {document.documentElement.style.overflow = 'visible'; setSideBar(false); setSearchField(false)}}></div>
+                            w-screen opacity-40' onClick={() => {document.documentElement.style.overflow = 'visible'; setSidebar(false); setSearchField(false)}}></div>
                         
                         {/* Mobile side bar */}    
-                        {sideBar ? 
+                        {sidebar ? 
                         (
                         <div className='fixed flex flex-col top-0 left-0
                             h-screen w-[80%] min-w-[200px] font-serif bg-white'>
@@ -46,7 +47,7 @@ function Header(props) {
                                     <h1 className='text-[1.2rem]'>Olá, Visitante</h1>
                                     <p className='text-[.7rem] cursor-pointer hover:underline'>Faça seu login</p>
                                 </div>
-                                <p className='text-[.6rem] m-3 cursor-pointer hover:underline' onClick={() => {document.documentElement.style.overflow = 'visible'; setSideBar(false)}}>Fechar</p>
+                                <p className='text-[.6rem] m-3 cursor-pointer hover:underline' onClick={() => {document.documentElement.style.overflow = 'visible'; setSidebar(false)}}>Fechar</p>
                             </div>
                             <div className='flex pr-16 mr-4 m-1'><img src={logoCinza} alt="Logo CS cinza" /></div>
                             <div className='flex flex-col text-[.7rem] mt-1 bg-gray-100'>
@@ -87,7 +88,7 @@ function Header(props) {
                     <div className='flex justify-between h-[70px] min-w-[330px]'>
                     
                         {/* Menu bar */}
-                        <HiMenu className='m-2 text-[1.4rem] cursor-pointer' onClick={() => {document.documentElement.style.overflow = 'hidden'; setSideBar(true)}}/>
+                        <HiMenu className='m-2 text-[1.4rem] cursor-pointer' onClick={() => {document.documentElement.style.overflow = 'hidden'; setSidebar(true)}}/>
                     
                         {/* Carmen Steffens header logo */}
                         <img className='h-6 m-3 ml-6 cursor-pointer' src={logo} alt="Carmen Steffens Logo" />
