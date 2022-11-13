@@ -15,7 +15,7 @@ function Main(props) {
             {props.mobile ?
             (
             /* Rendering for mobiles and smaller screens */
-            <div className='flex flex-col'>
+            <div className='flex flex-col min-w-[330px]'>
 
                 {/* Main picture of the product */}
                 <div className='flex items-center m-3'>
@@ -32,6 +32,7 @@ function Main(props) {
                 
                 {/* Product details */}
                 <ProductDetails mobile={props.mobile}/>
+
             </div>            
             ) :
             
@@ -52,9 +53,10 @@ function Main(props) {
                         <a href={mainPicture}><img className='hover:scale-[2]' src={mainPicture} alt="Main picture of product" /></a>
                     </div>
                 </div>
-                
+
                 {/* Product details */}
                 <ProductDetails mobile={props.mobile}/>
+
             </div>
             )}
         </div>
