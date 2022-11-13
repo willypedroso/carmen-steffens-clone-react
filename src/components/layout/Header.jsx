@@ -166,7 +166,7 @@ function Header(props) {
                                 onMouseOver={() => setRenderBolsas(true)}
                                 onMouseOut={() => setRenderBolsas(false)}>
                                     {menuBolsas.map(item => (
-                                        <a href="#"><strong>{item}</strong></a>
+                                        <a key={item} href="#"><strong>{item}</strong></a>
                                     ))}
                                 </div>
                             ) : false }
@@ -181,7 +181,7 @@ function Header(props) {
                                 onMouseOver={() => setRenderRoupas(true)}
                                 onMouseOut={() => setRenderRoupas(false)}>
                                     {menuRoupas.map(item => (
-                                        <a href="#"><strong>{item}</strong></a>
+                                        <a key={item} href="#"><strong>{item}</strong></a>
                                     ))}
                                 </div>
                             ) : false }
@@ -196,7 +196,7 @@ function Header(props) {
                                 onMouseOver={() => setRenderCsyoung(true)}
                                 onMouseOut={() => setRenderCsyoung(false)}>
                                     {menuCsYoung.map(item => (
-                                        <a href="#"><strong>{item}</strong></a>
+                                        <a key={item} href="#"><strong>{item}</strong></a>
                                     ))}
                                 </div>
                             ) : false }
@@ -211,7 +211,7 @@ function Header(props) {
                                 onMouseOver={() => setRenderAcessorios(true)}
                                 onMouseOut={() => setRenderAcessorios(false)}>
                                     {menuAcessorios.map(item => (
-                                        <a href="#"><strong>{item}</strong></a>
+                                        <a key={item} href="#"><strong>{item}</strong></a>
                                     ))}
                                 </div>
                             ) : false }
@@ -226,10 +226,10 @@ function Header(props) {
                                 onMouseOver={() => setRenderOutlet(true)}
                                 onMouseOut={() => setRenderOutlet(false)}>
                                     {menuOutlet.map(item => (
-                                        <a href="#"><strong>{item}</strong></a>
+                                        <a key={item} href="#"><strong>{item}</strong></a>
                                     ))}
                                     {menuCsYoung.map(item => (
-                                        <a href="#"><strong>{item}</strong></a>
+                                        <a key={item} href="#"><strong>{item}</strong></a>
                                     ))}
                                 </div>
                             ) : false }

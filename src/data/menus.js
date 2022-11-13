@@ -1,3 +1,5 @@
+/* Header submenus data */
+
 const menuSapatos = [
     "VER TODOS",
     "FLATS",
