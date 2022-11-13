@@ -8,3 +8,4 @@ In this responsive SPA I make use of the following technologies and libraries:
 - Node.js
 - Tailwind CSS
 - React Icons
+- Testing Library
